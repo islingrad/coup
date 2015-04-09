@@ -1,3 +1,4 @@
+#ASSFOCK
 from random import randint
 
 
