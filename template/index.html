@@ -1,0 +1,24 @@
+<html>
+<script src="static/factions.js"></script>
+<script src="static/landing_page.js"></script>
+<script src="static/message_handler.js"></script>
+<title>Tornado WebSockets</title>
+
+<div id='global_chat'>
+</div>
+
+ <body id='body'>
+
+ </body>
+ <span id='player_msg'>
+ <strong id='msg_label'>Username:</strong> <input type="text" id="msg" maxlength="25">
+ <input type="button" id='msg_button' value="Send">
+</span>
+
+<script type="text/javascript">
+document.getElementById('player_msg').style.display = 'block'
+Factions.get_username();
+setTimeout(function(){console.log('ran this'); Factions.get_text_input('CHAT BOX:', 'global_msg');}, 10000);
+Factions.landing_page();
+</script>
+ </html>
