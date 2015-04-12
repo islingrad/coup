@@ -12,8 +12,6 @@ class Game(object):
 		self.max_players = max_players
 		self.player_list = player_list;
 
-
-
 class Entity(object):
 	"""docstring for Entity"""
 	def __init__(self, base_health = 100, worker_count = 10, money = 0, army = 0):

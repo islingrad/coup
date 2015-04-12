@@ -19,7 +19,7 @@ def connection_closed(ws):
 
 def message_handler(ws, message):
 	decoded = json.loads(message)
-	tag = decoded['type']
+	tag = decoded['tag']
 	if tag == 'username':
 		assign_username(ws, decoded)
 	elif tag == 'global_msg':
