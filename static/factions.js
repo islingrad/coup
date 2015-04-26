@@ -3,7 +3,7 @@ var Factions = {}
 Factions.msg_type = 'default';
 
 function onLoad() {
-    Factions.ws = new WebSocket("ws://138.51.44.133:8080/websocket");
+    Factions.ws = new WebSocket("ws://192.168.1.115:8080/websocket");
 
     Factions.ws.onopen = function() {
     	console.log("Connection Opened");
