@@ -3,7 +3,7 @@ var Factions = {}
 Factions.msg_type = 'default';
 
 function onLoad() {
-    Factions.ws = new WebSocket("ws://138.51.44.133:8080/websocket");
+    Factions.ws = new WebSocket("ws://192.168.1.146:8080/websocket");
 
     Factions.ws.onopen = function() {
     	console.log("Connection Opened");
@@ -18,7 +18,8 @@ onLoad();
 
 Factions.notify = function () {
 	my_tag = Factions.msg_type;
-    var m_data = document.getElementById('msg').value;
+	var m_data = document.getElementById('msg').value;
+	document.getElementById('msg').value = '';
 	var msg = {tag: my_tag, data: m_data};
     Factions.ws.send(JSON.stringify(msg));
 }
@@ -50,4 +51,12 @@ Factions.get_username = function() {
     var new_name = prompt("Enter Your name!");
     var msg = JSON.stringify({tag: 'username', data: new_name});
     Factions.ws.send(msg)
+}
+
+function checkSubmit(e)
+{
+   if(e && e.keyCode == 13)
+   {
+      Factions.notify();
+   }
 }
